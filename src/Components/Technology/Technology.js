@@ -2,14 +2,14 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
-const Home = () => {
+const Technology = () => {
     return (
         <div>
             <Header></Header>
-            <h2>This is Home</h2>
+            <h1>This is Technology</h1>
             <Footer></Footer>
         </div>
     );
 };
 
-export default Home;
+export default Technology;

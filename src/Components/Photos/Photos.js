@@ -23,7 +23,7 @@ const Photos = () => {
         { url: img9, key: 9, caption: 'Corridor' },
     ]
     return (
-        <div>
+        <div className="bg-pink-200 my-3">
             <h1 className="md:text-6xl sm:text-2xl font-bold text-yellow-700 md:p-5 sm:p-1 ">At a glance our hospital</h1>
             <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-4">
                 {

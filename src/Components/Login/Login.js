@@ -1,25 +1,81 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import React, { useState } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 const Login = () => {
+    const auth = getAuth();
+    const [error, setError] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const { signInUsingGoogle } = useAuth();
+
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home';
+
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri);
+            })
+    }
+
+
+    const handleEmailChange = e => {
+        setEmail(e.target.value);
+    }
+
+    const handlePasswordChange = e => {
+        setPassword(e.target.value)
+    }
+
+    const handleLogin = e => {
+        e.preventDefault();
+        console.log(email, password);
+        if (password.length < 6) {
+            setError('Password Must be at least 6 characters long.')
+            return;
+        }
+        processLogin(email, password);
+
+    }
+
+    const processLogin = (email, password) => {
+        signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                history.push(redirect_uri);
+                setError('');
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+    }
+
     return (
         <div>
             <Header></Header>
             <h1 className="text-5xl font-bold text-blue-900 my-5">Please Login</h1>
             <div className="flex justify-center">
                 <div className="text-left bg-blue-100 px-6 rounded-sm py-2">
-                    <form>
+                    <form onSubmit={handleLogin}>
 
                         {/* email input field */}
                         <div className="flex my-3 justify-between">
-                            <span className="text-purple-900 text-xl font-bold">Email:</span>  <input className="border-2 ml-3" type="email" name="email" placeholder="Input your email here" />
+                            <span className="text-purple-900 text-xl font-bold">Email:</span>  <input onBlur={handleEmailChange} className="border-2 ml-3" type="email" name="email" placeholder="Input your email here" />
                         </div>
 
                         {/* password input field */}
                         <div className="flex my-3 justify-between">
-                            <span className="text-purple-900 text-xl font-bold">Password:</span> <input className="border-2 ml-3" type="password" name="password" placeholder="Your password" />
+                            <span className="text-purple-900 text-xl font-bold">Password:</span> <input onBlur={handlePasswordChange} className="border-2 ml-3" type="password" name="password" placeholder="Your password" />
+                        </div>
+                        <div className="text-red-400">
+                            {error}
                         </div>
 
                         {/* submit button input field */}
@@ -33,7 +89,7 @@ const Login = () => {
             {/* Login with google button */}
             <div className="my-3">
                 <h3 className="text-2xl">--------------Or--------------</h3>
-                <button className="border-2 p-2 rounded-lg bg-yellow-500 text-red-700 font-bold text-3xl">Login With Google</button>
+                <button onClick={handleGoogleLogin} className="border-2 p-2 rounded-lg bg-yellow-500 text-red-700 font-bold text-3xl">Login With Google</button>
             </div>
 
             {/* toggle to register link */}

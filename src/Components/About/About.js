@@ -5,6 +5,8 @@ const About = () => {
         <div className="bg-green-300 my-6 bg-opacity-70">
             <h1 className="md:text-6xl sm:text-4xl font-bold text-yellow-700 md:p-5 sm:p-1 ">Info About Us</h1>
             <div className="md:grid grid-cols-2 gap-12">
+
+                {/* Our history section is here */}
                 <div className="p-2">
                     <h1 className="md:text-4xl sm:text-3xl font-bold text-indigo-700 md:p-5 sm:p-1 ">Our History</h1>
                     <div className="bg-gray-200 rounded text-left p-1">
@@ -13,6 +15,8 @@ const About = () => {
                         </p>
                     </div>
                 </div>
+
+                {/* Our vission section is here */}
                 <div className="p-2">
                     <h1 className="md:text-4xl sm:text-3xl font-bold text-indigo-700 md:p-5 sm:p-1 ">Our Vission</h1>
                     <div className="bg-gray-200 rounded text-left p-1">

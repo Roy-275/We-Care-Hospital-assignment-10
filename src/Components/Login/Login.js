@@ -24,7 +24,7 @@ const Login = () => {
 
                         {/* submit button input field */}
                         <div className="text-right">
-                            <input className="px-4 py-1 font-bold text-white text-xl bg-green-300 cursor-pointer" type="submit" value="Submit" />
+                            <input className="px-4 py-1 font-bold text-white text-xl bg-green-400 hover:bg-green-300 cursor-pointer hover:text-green-800" type="submit" value="Submit" />
                         </div>
                     </form>
                 </div>

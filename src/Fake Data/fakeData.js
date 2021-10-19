@@ -59,7 +59,7 @@ const technology = [
     {
         key: 1,
         name: "Microscope",
-        img: "https://www.doctorshomebd.com/wp-content/uploads/2014/05/Dr.-Pran-Gopal-Datta-Doctors-Home-BD.jpghttps://m.media-amazon.com/images/I/71rsexfuu0S._AC_SL1500_.jpg"
+        img: "https://m.media-amazon.com/images/I/71pGc-VDbZL._AC_SL1500_.jpg"
     },
     {
         key: 2,

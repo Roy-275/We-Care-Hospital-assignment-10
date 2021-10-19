@@ -5,6 +5,8 @@ import logo from '../../images/favicon.ico';
 const Footer = () => {
     return (
         <div className="bg-purple-800 text-blue-200 mt-6 grid md:grid-cols-3 md:gap-4 sm:gap-2 p-6 mb-4">
+
+            {/* first column */}
             <div className="flex md:justify-around sm:justify-between items-center">
                 <div className="flex justify-around items-center">
                     <img className="md:h-36 sm:h-24" src={logo} alt="" />
@@ -16,11 +18,15 @@ const Footer = () => {
                     <h5 className="md:text-lg sm:text-sm text-white">Email Us: <a href="mailto:wecareh@gov.bd">wecareh@gov.bd</a></h5>
                 </div>
             </div>
+
+            {/* 2nd column  */}
             <div className="flex justify-around items-center">
                 <p className="md:text-xl sm:text-base font-thin text-yellow-200">
                     This website is for information purpose and not intended as medical advice or a substitude of a consultation with a professional healthcare provider. If there is any kind of emergency please contact with our proffessional doctors.
                 </p>
             </div>
+
+            {/* third column  */}
             <div className="flex justify-around">
                 <div className="text-left">
                     <h2 className="md:text-2xl sm:text-base font-bold sm:mt-4 md:mt-0">Quick Links</h2>

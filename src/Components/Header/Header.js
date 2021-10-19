@@ -10,8 +10,12 @@ const Header = () => {
                 <NavLink to="/technology"><span className="md:text-3xl font-bold text-white md:mr-6 sm:mr-2 hover:bg-blue-500 p-1 rounded-lg">Technology</span></NavLink>
                 <NavLink to="/techno"><span className="sm:hidden md:inline md:text-3xl font-bold text-white md:mr-6 sm:mr-2 hover:bg-blue-500 p-1 rounded-lg">Not found</span></NavLink>
             </div>
-            <div>
 
+            {/* Login Register buttons */}
+            <div className="md:mt-4 sm:mt-1 text-right">
+                <button className="md:text-3xl font-bold text-green-600 hover:text-white md:mr-6 sm:mr-2 hover:bg-green-500 md:p-2 sm:p-1 rounded-lg shadow-inner bg-green-100">Login</button>
+
+                <button className="md:text-3xl font-bold text-green-600 hover:text-white md:mr-6 sm:mr-2 hover:bg-green-500 md:p-2 sm:p-1 rounded-lg shadow-inner bg-green-100">Register</button>
             </div>
         </div>
     );

@@ -6,7 +6,6 @@ import img4 from '../../images/at a glance/image4.jpg';
 import img5 from '../../images/at a glance/image5.jpg';
 import img6 from '../../images/at a glance/image6.jpg';
 import img7 from '../../images/at a glance/image7.jpg';
-import img8 from '../../images/at a glance/image8.jpg.crdownload';
 import img9 from '../../images/at a glance/image9.jpg';
 import Image from '../Image/Image';
 
@@ -19,7 +18,6 @@ const Photos = () => {
         { url: img5, key: 5, caption: 'Receiption' },
         { url: img6, key: 6, caption: 'Doctor chamber' },
         { url: img7, key: 7, caption: 'Waiting room 2' },
-        { url: img8, key: 8, caption: 'Cabin for patients' },
         { url: img9, key: 9, caption: 'Corridor' },
     ]
     return (

@@ -40,7 +40,6 @@ const Register = () => {
 
     const handleRegistration = e => {
         e.preventDefault();
-        console.log(email, password);
         if (password.length < 6) {
             setError('Password Must be at least 6 characters long.')
             return;
